@@ -2,3 +2,5 @@
 
 *.o
 main
+build
+csoundAPI_examples/

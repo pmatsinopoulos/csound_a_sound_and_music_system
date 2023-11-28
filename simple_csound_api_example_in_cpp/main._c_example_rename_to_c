@@ -1,0 +1,14 @@
+#include "csound.h"
+
+int main(int argc, const char **argv)
+{
+  void *csound = csoundCreate(0);
+  int result = csoundCompile(csound, argc, argv);
+  if (!result) {
+    while (csoundPerformKsmps(csound) == 0)
+    {
+    }
+    csoundDestroy(csound);
+    return result;
+  }
+}
