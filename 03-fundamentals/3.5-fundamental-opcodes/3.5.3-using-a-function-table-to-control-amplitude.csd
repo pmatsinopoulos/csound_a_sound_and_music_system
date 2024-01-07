@@ -4,7 +4,7 @@
   </CsOptions>
   <CsInstruments>
     isize = 16384 ; this is 2 ** 14
-    ifn ftgen 1, 0, isize, 7,
+    ifn ftgen 1, 0, isize, -7,
               0, isize * 0.1, 1,
                  isize * 0.8, 1,
                  isize * 0.1, 0
@@ -21,8 +21,9 @@
                         ; next is l/sr X f0 -> 16384 / 44100 * 1 / 10
       asig oscili kenv, ; amplitude
                   p5    ; frequency
+      out asig
     endin
-    schedule(1, 0, 10, 0dbfs/2, 440)
+    schedule(1, 0, 10, 0dbfs, 440)
   </CsInstruments>
   <CsScore>
   </CsScore>
